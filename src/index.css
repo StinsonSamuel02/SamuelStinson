@@ -49,6 +49,7 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    color-scheme: dark;
   }
 
   body {
@@ -58,6 +59,7 @@
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
   }
 
@@ -115,7 +117,14 @@
     background-image:
       linear-gradient(to right, rgb(255 255 255 / 0.028) 1px, transparent 1px),
       linear-gradient(to bottom, rgb(255 255 255 / 0.028) 1px, transparent 1px);
-    background-size: 68px 68px;
+    background-size: 44px 44px;
+  }
+
+  /* Denser grid on phones so the texture still reads at small sizes. */
+  @media (min-width: 768px) {
+    .bg-grid {
+      background-size: 68px 68px;
+    }
   }
 
   /* Film grain overlay — inline SVG turbulence keeps it dependency free. */
@@ -187,6 +196,34 @@
   }
   .lift:hover {
     transform: translateY(-4px);
+  }
+
+  /* Projects list: ember wash + row inset, revealed on hover only. */
+  .row-wash {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @media (hover: hover) {
+    .group:hover .row-wash {
+      transform: scaleX(1);
+    }
+
+    .group:hover .row-pad {
+      padding-inline: 1.25rem;
+    }
+  }
+
+  /* Touch screens latch :hover after a tap, which leaves cards stuck mid-lift. */
+  @media (hover: none) {
+    .lift:hover {
+      transform: none;
+    }
+
+    .spotlight:hover::before {
+      opacity: 0;
+    }
   }
 }
 

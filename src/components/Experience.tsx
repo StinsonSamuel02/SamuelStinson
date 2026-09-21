@@ -21,7 +21,7 @@ export function Experience() {
         />
 
         {experience.entries.map((entry, i) => (
-          <li key={entry.id} className="relative pb-14 pl-10 last:pb-0 md:pl-14">
+          <li key={entry.id} className="relative pb-10 pl-8 last:pb-0 sm:pb-12 sm:pl-10 md:pb-14 md:pl-14">
             <Reveal delay={i * 0.05}>
               <span
                 aria-hidden
@@ -30,11 +30,11 @@ export function Experience() {
                 <span className="size-1.5 rounded-full bg-ember-500" />
               </span>
 
-              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                <h3 className="font-display text-xl font-medium tracking-tight text-mist-50 md:text-2xl">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 sm:gap-x-4">
+                <h3 className="font-display text-lg font-medium tracking-tight text-mist-50 sm:text-xl md:text-2xl">
                   {t(entry.role)}
                 </h3>
-                <span aria-hidden className="h-px w-5 bg-white/15" />
+                <span aria-hidden className="hidden h-px w-5 bg-white/15 sm:block" />
                 <span className="font-mono text-xs tracking-wide text-ember-400">
                   {entry.company}
                 </span>
@@ -42,9 +42,11 @@ export function Experience() {
 
               <p className="mt-2 eyebrow text-mist-600">{t(entry.period)}</p>
 
-              <p className="mt-5 max-w-2xl leading-relaxed text-mist-300">{t(entry.summary)}</p>
+              <p className="mt-4 max-w-2xl text-[0.9375rem] leading-relaxed text-mist-300 sm:mt-5 sm:text-base">
+                {t(entry.summary)}
+              </p>
 
-              <ul className="mt-5 space-y-2.5">
+              <ul className="mt-4 space-y-2.5 sm:mt-5">
                 {tl(entry.highlights).map((highlight) => (
                   <li key={highlight} className="flex gap-3 text-sm leading-relaxed text-mist-400">
                     <span aria-hidden className="mt-2 size-1 shrink-0 rounded-full bg-ember-500/70" />
@@ -53,7 +55,7 @@ export function Experience() {
                 ))}
               </ul>
 
-              <ul className="mt-6 flex flex-wrap gap-2">
+              <ul className="mt-5 flex flex-wrap gap-1.5 sm:mt-6 sm:gap-2">
                 {entry.stack.map((tech) => (
                   <li
                     key={tech}

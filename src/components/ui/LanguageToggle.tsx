@@ -21,7 +21,7 @@ export function LanguageToggle({ className = "" }: { className?: string }) {
             onClick={() => setLang(code)}
             aria-pressed={active}
             title={`${LANG_NAME[code]}${active ? "" : ` — ${t(ui.switchTo)}`}`}
-            className={`relative z-10 rounded-full px-3 py-1 font-mono text-[0.6875rem] font-semibold tracking-widest transition-colors duration-300 ${
+            className={`relative z-10 rounded-full px-3.5 py-2 font-mono text-[0.6875rem] font-semibold tracking-widest transition-colors duration-300 sm:py-1.5 ${
               active ? "text-ink-950" : "text-mist-500 hover:text-mist-100"
             }`}
           >

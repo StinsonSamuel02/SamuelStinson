@@ -16,33 +16,35 @@ export function Education() {
       title={t(education.title)}
       description={t(education.description)}
     >
-      <div className="grid gap-5 lg:grid-cols-12">
+      <div className="grid gap-4 sm:gap-5 lg:grid-cols-12">
         <div className="lg:col-span-7">
           {education.entries.map((entry, i) => (
             <Reveal key={entry.id} delay={i * 0.06}>
-              <SpotlightCard className="h-full rounded-card border border-white/10 bg-ink-900/60 p-8">
+              <SpotlightCard className="h-full rounded-card border border-white/10 bg-ink-900/60 p-5 sm:p-6 md:p-8">
                 <span className="eyebrow text-ember-500">{t(entry.period)}</span>
 
-                <h3 className="mt-6 font-display text-2xl font-medium tracking-tight text-mist-50 md:text-3xl">
+                <h3 className="mt-5 font-display text-xl font-medium tracking-tight text-mist-50 sm:mt-6 sm:text-2xl md:text-3xl">
                   {t(entry.degree)}
                 </h3>
 
-                <p className="mt-3 font-mono text-xs leading-relaxed tracking-wide text-verdigris-400">
+                <p className="mt-2.5 font-mono text-xs leading-relaxed tracking-wide text-verdigris-400 sm:mt-3">
                   {entry.school}
                 </p>
 
-                <p className="mt-6 max-w-xl leading-relaxed text-mist-400">{t(entry.detail)}</p>
+                <p className="mt-5 max-w-xl text-[0.9375rem] leading-relaxed text-mist-400 sm:mt-6 sm:text-base">
+                  {t(entry.detail)}
+                </p>
               </SpotlightCard>
             </Reveal>
           ))}
         </div>
 
-        <div className="grid gap-5 lg:col-span-5">
+        <div className="grid gap-4 sm:gap-5 lg:col-span-5">
           <Reveal delay={0.1}>
-            <div className="h-full rounded-card border border-white/10 bg-ink-900/60 p-8">
+            <div className="h-full rounded-card border border-white/10 bg-ink-900/60 p-5 sm:p-6 md:p-8">
               <h3 className="eyebrow text-mist-500">{t(education.languagesTitle)}</h3>
 
-              <ul className="mt-7 space-y-7">
+              <ul className="mt-5 space-y-6 sm:mt-7 sm:space-y-7">
                 {education.languages.map((language) => (
                   <li key={t(language.name)}>
                     <div className="flex items-baseline justify-between gap-4">
@@ -70,10 +72,10 @@ export function Education() {
           </Reveal>
 
           <Reveal delay={0.18}>
-            <div className="h-full rounded-card border border-white/10 bg-ink-900/60 p-8">
+            <div className="h-full rounded-card border border-white/10 bg-ink-900/60 p-5 sm:p-6 md:p-8">
               <h3 className="eyebrow text-mist-500">{t(education.certificationsTitle)}</h3>
 
-              <ul className="mt-7 space-y-5">
+              <ul className="mt-5 space-y-5 sm:mt-7">
                 {education.certifications.map((certification) => (
                   <li key={certification.id} className="flex gap-4">
                     <span

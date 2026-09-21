@@ -32,7 +32,7 @@ export function Contact() {
       title={t(contact.title)}
       description={t(contact.description)}
     >
-      <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
+      <div className="grid gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-7">
           <Reveal>
             <a
@@ -40,8 +40,8 @@ export function Contact() {
               className="group block border-b border-white/12 pb-4 transition-colors duration-500 hover:border-ember-500"
             >
               <span className="eyebrow text-mist-600">Email</span>
-              <span className="mt-3 flex items-center justify-between gap-4">
-                <span className="font-display text-[clamp(1.15rem,3.4vw,2rem)] leading-tight font-medium tracking-tight break-all text-mist-50 transition-colors duration-500 group-hover:text-ember-300">
+              <span className="mt-2.5 flex items-center justify-between gap-3 sm:mt-3 sm:gap-4">
+                <span className="min-w-0 font-display text-[clamp(1.0625rem,3.4vw,2rem)] leading-tight font-medium tracking-tight break-all text-mist-50 transition-colors duration-500 group-hover:text-ember-300">
                   {profile.email}
                 </span>
                 <span
@@ -55,10 +55,10 @@ export function Contact() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-2 rounded-full bg-ember-500 px-7 py-3 text-sm font-semibold text-ink-950 transition-all duration-300 hover:bg-ember-400 hover:shadow-ember"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ember-500 px-7 py-3.5 text-sm font-semibold text-ink-950 transition-all duration-300 hover:bg-ember-400 hover:shadow-ember sm:w-auto sm:py-3"
               >
                 {t(contact.cta)}
               </a>
@@ -66,7 +66,7 @@ export function Contact() {
               <button
                 type="button"
                 onClick={copyEmail}
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-semibold text-mist-100 transition-colors duration-300 hover:border-ember-500/60 hover:text-ember-300"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold text-mist-100 transition-colors duration-300 hover:border-ember-500/60 hover:text-ember-300 sm:w-auto sm:py-3"
               >
                 {copied ? t(contact.copied) : t(contact.copyEmail)}
               </button>
@@ -75,7 +75,7 @@ export function Contact() {
                 <a
                   href={cvHref}
                   download
-                  className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-semibold text-mist-100 transition-colors duration-300 hover:border-ember-500/60 hover:text-ember-300"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold text-mist-100 transition-colors duration-300 hover:border-ember-500/60 hover:text-ember-300 sm:w-auto sm:py-3"
                 >
                   {t(contact.downloadCv)}
                 </a>
@@ -96,10 +96,10 @@ export function Contact() {
 
         <div className="lg:col-span-5">
           <Reveal delay={0.1}>
-            <div className="rounded-card border border-white/10 bg-ink-900/60 p-8">
+            <div className="rounded-card border border-white/10 bg-ink-900/60 p-6 sm:p-8">
               <h3 className="eyebrow text-mist-500">{t(contact.elseWhere)}</h3>
 
-              <ul className="mt-7 divide-y divide-white/8">
+              <ul className="mt-5 divide-y divide-white/8 sm:mt-7">
                 {socials.map((social) => (
                   <li key={social.id}>
                     <a
