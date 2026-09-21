@@ -31,6 +31,7 @@ Todo el contenido está separado de los componentes. **No hace falta tocar ning�
 Dentro de `src/data/portfolio.ts` hay comentarios `TODO` marcando lo que falta por rellenar:
 
 - **Biografía** (`about.paragraphs`) — texto provisional, reescríbelo con tu voz.
+- **Habilidades** (`skills.groups`) — el grupo `lenguajes` es el inventario de lenguajes y frameworks; usa `subgroups` (dos filas etiquetadas) y `featured: true` para ocupar todo el ancho. El resto de grupos son tarjetas sueltas con una lista plana en `items`.
 - **Experiencia** (`experience.entries`) — sustituye las entradas de ejemplo por tu experiencia real.
 - **Proyectos** (`projects.entries`) — reemplaza los proyectos de ejemplo y añade enlaces `repo` / `demo`.
 - **Formación** (`education.entries[0].period`) — añade tus años reales.
