@@ -108,18 +108,18 @@ export const tickerItems: string[] = [
 export const about = {
   eyebrow: { es: "Sobre mí", en: "About me" } satisfies L,
   title: {
-    es: "Ingeniería con criterio, código con intención.",
-    en: "Engineering with judgement, code with intention.",
+    es: "Software con criterio, código con intención.",
+    en: "Software with judgement, code with intention.",
   } satisfies L,
   // TODO: reescribe esta biografía con tu propia voz (2-4 párrafos cortos).
   paragraphs: {
     es: [
-      "Soy Samuel Salazar Zaldivar, Ingeniero Informático graduado de la Universidad de Holguín «Oscar Lucero Moya». Trabajo en todo el ciclo de vida del software: entender el problema, modelar los datos, construir la interfaz y dejar todo desplegado y funcionando.",
+      "Soy Samuel Salazar Zaldivar, Desarrollador de Software graduado de Ingeniería Informática en la Universidad de Holguín «Oscar Lucero Moya». Trabajo en todo el ciclo de vida del software: entender el problema, modelar los datos, construir la interfaz y dejar todo desplegado y funcionando.",
       "Mi día a día se reparte entre el frontend —JavaScript, TypeScript y React— y el backend con Python y Django, apoyado en PostgreSQL y MySQL. Cuando el proyecto lo pide, salto a Android con Kotlin para llevar la misma experiencia al bolsillo.",
       "Me importa el detalle: nombres claros, interfaces accesibles y decisiones técnicas que se puedan defender. Prefiero una solución simple y bien medida antes que un conjunto de capas que nadie entiende seis meses después.",
     ],
     en: [
-      "I'm Samuel Salazar Zaldivar, a Software Engineer graduated from Universidad de Holguín «Oscar Lucero Moya». I work across the whole software lifecycle: understanding the problem, modelling the data, building the interface, and shipping it so it actually runs.",
+      "I'm Samuel Salazar Zaldivar, a Software Developer with a degree in Computer Engineering from Universidad de Holguín «Oscar Lucero Moya». I work across the whole software lifecycle: understanding the problem, modelling the data, building the interface, and shipping it so it actually runs.",
       "My day-to-day is split between the frontend — JavaScript, TypeScript and React — and the backend with Python and Django, backed by PostgreSQL and MySQL. When a project calls for it, I move into Android with Kotlin to bring the same experience to your pocket.",
       "I care about the details: clear names, accessible interfaces, and technical decisions you can defend. I'd rather have a simple, well-measured solution than a pile of layers nobody understands six months later.",
     ],
