@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ *
+ *  Design tokens
+ *  Ink & Ember: near-black canvas, warm copper accent, verdigris edge.
+ * ------------------------------------------------------------------ */
+@theme {
+  --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-ink-950: #07080a;
+  --color-ink-900: #0b0d11;
+  --color-ink-850: #0f1216;
+  --color-ink-800: #15181d;
+  --color-ink-750: #1c2026;
+  --color-ink-700: #262b33;
+  --color-ink-600: #3a414b;
+
+  --color-mist-50: #f6f7f9;
+  --color-mist-100: #e9ebef;
+  --color-mist-200: #d3d7dd;
+  --color-mist-300: #b4bac3;
+  --color-mist-400: #989fa9;
+  --color-mist-500: #7d848f;
+  --color-mist-600: #626974;
+
+  --color-ember-200: #f7c6ab;
+  --color-ember-300: #f0a179;
+  --color-ember-400: #ea8455;
+  --color-ember-500: #e2703a;
+  --color-ember-600: #c25a2a;
+  --color-ember-700: #94431f;
+
+  --color-verdigris-400: #5fc2b0;
+  --color-verdigris-500: #3fa392;
+  --color-verdigris-600: #2c7a6d;
+
+  --radius-card: 1.25rem;
+
+  --shadow-lift: 0 24px 60px -30px rgb(0 0 0 / 0.85);
+  --shadow-ember: 0 0 0 1px rgb(226 112 58 / 0.35), 0 22px 60px -32px rgb(226 112 58 / 0.55);
+}
+
+/* ------------------------------------------------------------------ *
+ *  Base
+ * ------------------------------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink-950);
+    color: var(--color-mist-100);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-ember-500);
+    color: var(--color-ink-950);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ember-400);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ *  Utilities
+ * ------------------------------------------------------------------ */
+@layer utilities {
+  /* Small uppercase monospace labels — the typographic "signature". */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  /* Ember underline that grows from the left on hover. */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    transition: background-size 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+
+  /* Fine engineering grid used as the page backdrop. */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.028) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.028) 1px, transparent 1px);
+    background-size: 68px 68px;
+  }
+
+  /* Film grain overlay — inline SVG turbulence keeps it dependency free. */
+  .bg-grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  /* Duotone treatment for the portrait: desaturated + copper wash. */
+  .duotone {
+    filter: grayscale(1) contrast(1.08) brightness(0.96);
+  }
+  .duotone-wash {
+    background: linear-gradient(155deg, rgb(226 112 58 / 0.55), rgb(15 18 22 / 0.65) 62%);
+    mix-blend-mode: color;
+  }
+  .duotone-shade {
+    background: linear-gradient(to top, rgb(7 8 10 / 0.9) 0%, transparent 55%);
+  }
+
+  /* Outlined display type — falls back to a solid tint when unsupported. */
+  .outline-text {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--color-ember-500);
+  }
+
+  @supports not (-webkit-text-stroke: 1px black) {
+    .outline-text {
+      color: var(--color-ember-500);
+    }
+  }
+
+  /* Cursor-tracked spotlight for cards (driven by --mx / --my). */
+  .spotlight::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 350ms ease;
+    background: radial-gradient(
+      340px circle at var(--mx, 50%) var(--my, 50%),
+      rgb(226 112 58 / 0.16),
+      transparent 62%
+    );
+    pointer-events: none;
+  }
+  .spotlight:hover::before {
+    opacity: 1;
+  }
+
+  .marquee-track {
+    animation: marquee 42s linear infinite;
+  }
+  .marquee-host:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .lift {
+    transition:
+      transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 450ms ease,
+      background-color 450ms ease;
+  }
+  .lift:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -22px, 0) scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
