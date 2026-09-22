@@ -5,7 +5,7 @@ import type { L } from "../i18n";
  * ════════════════════════════════════════════════════════════════════ */
 
 export const profile = {
-  name: "Samuel Salazar Zaldivar",
+  name: "Samuel Salazar",
   /** Nombre corto para el logotipo de la cabecera. */
   shortName: "Samuel Salazar",
   initials: "SS",

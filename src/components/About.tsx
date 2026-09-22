@@ -27,10 +27,19 @@ export function About() {
           </div>
 
           <Reveal delay={0.24}>
-            <blockquote className="relative mt-10 border-l-2 border-ember-500 pl-5 sm:mt-12 sm:pl-6">
+            <blockquote className="mt-10 border-l-2 border-ember-500 pl-5 sm:mt-12 sm:pl-6">
               <p className="font-display text-lg leading-snug text-mist-100 sm:text-xl md:text-2xl">
                 «{t(about.quote)}»
               </p>
+              <footer className="mt-3 flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-sm text-mist-400">
+                <cite className="font-medium not-italic text-mist-100">
+                  {about.quoteAuthor.name}
+                </cite>
+                <span aria-hidden="true" className="text-ember-400">
+                  ·
+                </span>
+                <span>{t(about.quoteAuthor.role)}</span>
+              </footer>
             </blockquote>
           </Reveal>
         </div>

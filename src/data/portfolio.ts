@@ -78,12 +78,12 @@ export const hero = {
     role: {es: "Desarrollador de Software", en: "Software Developer"} satisfies L,
     roleAlt: {es: "Desarrollador Full-Stack", en: "Full-Stack Developer"} satisfies L,
     headline: {
-        es: "Diseño y construyo productos web y móviles, del modelo de datos a la última pantalla.",
-        en: "I design and build web and mobile products — from the data model to the last pixel.",
+        es: "Desarrollo software a medida, sólido y mantenible, listo para producción.",
+        en: "I build custom software — solid, maintainable, and ready for production.",
     } satisfies L,
     tagline: {
-        es: "Frontend con JavaScript y TypeScript. Backend con Python y Django. Bases de datos PostgreSQL y MySQL. Aplicaciones Android con Kotlin. Elijo la herramienta según el problema, no al revés.",
-        en: "Frontend with JavaScript and TypeScript. Backend with Python and Django. PostgreSQL and MySQL databases. Android apps with Kotlin. I pick the tool that fits the problem, not the other way around.",
+        es: "Trabajo con clientes y equipos para acotar bien el alcance antes de escribir código, y cuido la claridad y el mantenimiento tanto como el resultado. Comunicación directa, entregas por etapas y cada decisión técnica explicada.",
+        en: "I work with clients and teams to scope things properly before writing code, and I care about clarity and maintainability as much as about the outcome. Direct communication, staged delivery, and every technical decision explained.",
     } satisfies L,
     availability: {
         es: "Abierto a propuestas",
@@ -121,26 +121,32 @@ export const tickerItems: string[] = [
 export const about = {
     eyebrow: {es: "Sobre mí", en: "About me"} satisfies L,
     title: {
-        es: "Software con criterio, código con intención.",
-        en: "Software with judgement, code with intention.",
+        es: "Convierto ideas en software que funciona.",
+        en: "I turn ideas into software that works.",
     } satisfies L,
-    // TODO: reescribe esta biografía con tu propia voz (2-4 párrafos cortos).
     paragraphs: {
         es: [
-            "Soy Samuel Salazar Zaldivar, Desarrollador de Software graduado de Ingeniería Informática en la Universidad de Holguín «Oscar Lucero Moya». Trabajo en todo el ciclo de vida del software: entender el problema, modelar los datos, construir la interfaz y dejar todo desplegado y funcionando.",
-            "Mi día a día se reparte entre el frontend —JavaScript, TypeScript y React— y el backend con Python y Django, apoyado en PostgreSQL y MySQL. Cuando el proyecto lo pide, salto a Android con Kotlin para llevar la misma experiencia al bolsillo.",
-            "Me importa el detalle: nombres claros, interfaces accesibles y decisiones técnicas que se puedan defender. Prefiero una solución simple y bien medida antes que un conjunto de capas que nadie entiende seis meses después.",
+            "Soy Samuel Salazar, Desarrollador de Software graduado de Ingeniería Informática en la Universidad de Holguín «Oscar Lucero Moya». Como desarrollador full-stack abarco el ciclo completo de un proyecto: entender el problema, modelar los datos, construir la solución y dejarla desplegada y funcionando, sea cual sea su tipo.",
+            "Tengo experiencia con una amplia variedad de tecnologías y me desenvuelvo con la misma soltura en cualquier parte del stack: elijo la herramienta que mejor encaja en cada caso y la sostengo de principio a fin.",
+            "Mi trabajo es materializar lo que imaginas: convertir tu idea en un producto real, funcional y listo para crecer. Cuéntame tu proyecto —o tu sueño— y lo llevo del papel a la pantalla.",
         ],
         en: [
-            "I'm Samuel Salazar Zaldivar, a Software Developer with a degree in Computer Engineering from Universidad de Holguín «Oscar Lucero Moya». I work across the whole software lifecycle: understanding the problem, modelling the data, building the interface, and shipping it so it actually runs.",
-            "My day-to-day is split between the frontend — JavaScript, TypeScript and React — and the backend with Python and Django, backed by PostgreSQL and MySQL. When a project calls for it, I move into Android with Kotlin to bring the same experience to your pocket.",
-            "I care about the details: clear names, accessible interfaces, and technical decisions you can defend. I'd rather have a simple, well-measured solution than a pile of layers nobody understands six months later.",
+            "I'm Samuel Salazar, a Software Developer with a degree in Computer Engineering from Universidad de Holguín «Oscar Lucero Moya». As a full-stack developer I cover a project's whole lifecycle: understanding the problem, modelling the data, building the solution, and shipping it running — whatever kind of project it is.",
+            "I have experience with a wide range of technologies and I'm equally comfortable anywhere in the stack: I pick the tool that fits each case best and I own it from start to finish.",
+            "My job is to materialise what you imagine: turning your idea into a real, working product that is ready to grow. Tell me about your project — or your dream — and I'll take it from paper to screen.",
         ],
     } satisfies LList,
     quote: {
-        es: "El mejor código es el que el siguiente desarrollador entiende sin preguntarte.",
-        en: "The best code is the code the next developer understands without asking you.",
+        es: "La mejor manera de predecir el futuro es inventarlo.",
+        en: "The best way to predict the future is to invent it.",
     } satisfies L,
+    quoteAuthor: {
+        name: "Alan Kay",
+        role: {
+            es: "Científico de la computación · 1971",
+            en: "Computer scientist · 1971",
+        } satisfies L,
+    },
     stats: [
         {
             value: "Full-Stack",
