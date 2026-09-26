@@ -394,8 +394,25 @@ export const projects = {
     repoPending: {es: "Repositorio próximamente", en: "Repository coming soon"} satisfies L,
     entries: [
         {
-            id: "proj-portfolio",
+            id: "proj-obey",
             index: "01",
+            name: "Obey",
+            tagline: {
+                es: "CLI de IA que traduce lenguaje natural a comandos del shell que estás usando.",
+                en: "AI CLI that turns natural language into commands for the shell you're using.",
+            },
+            description: {
+                es: "Asistente de terminal escrito en TypeScript y sin dependencias en tiempo de ejecución. Detecta el shell desde el que se invoca —bash, zsh, fish, nushell, PowerShell o cmd.exe— y le pide al modelo un plan en JSON con los comandos, una explicación y un nivel de riesgo. Muestra el plan, pide confirmación, ejecuta el script y, si falla, le devuelve el error al modelo para que se corrija solo. Publicado en npm como obey-cli.",
+                en: "Terminal assistant written in TypeScript with no runtime dependencies. It detects the shell it was invoked from —bash, zsh, fish, nushell, PowerShell or cmd.exe— and asks the model for a JSON plan with the commands, an explanation and a risk level. It shows the plan, asks for confirmation, runs the script and, on failure, feeds the error back to the model so it can correct itself. Published on npm as obey-cli.",
+            },
+            stack: ["TypeScript", "Node.js", "LLM", "CLI"],
+            year: "2026",
+            repo: "https://github.com/StinsonSamuel02/Obey",
+            demo: null,
+        },
+        {
+            id: "proj-portfolio",
+            index: "02",
             name: "Portfolio personal",
             tagline: {
                 es: "Este mismo sitio: React, TypeScript y Tailwind, desplegado en Vercel.",
@@ -407,12 +424,12 @@ export const projects = {
             },
             stack: ["React", "TypeScript", "Tailwind CSS", "Vite", "Motion"],
             year: "2025",
-            repo: "https://github.com/SamuelStinson02",
+            repo: "https://github.com/StinsonSamuel02",
             demo: null,
         },
         {
             id: "proj-1",
-            index: "02",
+            index: "03",
             name: "Proyecto por confirmar",
             tagline: {
                 es: "Aplicación web con Django y PostgreSQL.",
@@ -429,7 +446,7 @@ export const projects = {
         },
         {
             id: "proj-2",
-            index: "03",
+            index: "04",
             name: "Proyecto por confirmar",
             tagline: {
                 es: "Aplicación Android nativa en Kotlin.",
